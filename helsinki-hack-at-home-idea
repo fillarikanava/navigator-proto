@@ -1,0 +1,74 @@
+## Idea
+
+###Title of your idea
+Cycling channel + City Navigator
+
+###Idea description
+Cycling Channel (Fillarikanava) was a fix-my-street -like participation / issue reporting platform dedicated for cyclists. The service was piloted in Helsinki 2008-2011 and gathered promising success among cyclists (around 4000 messages and comments - generally good quality). Eventually the service died, because the gathered feedback got stuck in the service - at the time there was no tecnical possibility to easily transfer the messages to the usual feedback handling process of the city.
+
+Nowadays the Helsinki City open issue reporting API (open 311) makes it possible to send the issues directly to the city's feedback system and receive notification when the reported problems are solved.
+
+The idea is to simply revitalize the old Cycling Channel concept and connect it to the issue reporting API. We also chose to use the great open source route planner application "City Navigator" as the base for the new mobile Cycling Channel, this gives opportunity to tie route planning and participation / issue reporting to one useful package for cyclists.
+
+Naturally the idea is to do this as a multi-city service - we start off with Helsinki area and Tampere. Jyväskylä and Turku are also in radar in Finland. In other countries the cities with working 311 API are good candidates. In places where there is still not 311 API we need to have some sort of email-based-hack.
+
+###What is the value proposition? What will your app offer that others don't?
+- Dedicated issue reporting for cyclists. In Helsinki "Pitäiskö fiksata" is meant for reporting all kinds of problems - targetted community (in this case syslists) make it possible to get deeper discussion and knowledge building around the reported issues.
+
+- Route planning and issue reporting togeather. By building on top of the journey planner we can give make the one application more attractive for users. There is also idea to use the same development effort for creating dedicated issue reporting for the public transport users (see. www.fixmytransport.com/ ), where the issues would be reported directly to the transport authority.
+
+
+###Which are the needs and problems this will solve?
+- Peoples need to report and discuss EASILY cycling related problems (and also good solutions), which thet meet on their daily paths.
+
+- City organization's need to get directed quality feedback from the community that really likes to help the city to make it's infrastructure better for cycling. No duplicate issues, since the already reported issues and the replies are visible for other users.
+
+- Navigation and issue reporting in one place - easy to remember - mobile
+
+###What are the main competitor apps existing in the market?
+- http://www.mobiilikunta.fi/
+- http://metro.fi/fiksaus/
+- www.fixmytransport.com/
+
+
+##App conceptualization
+
+###Describe briefly the use cases of your app
+Our use cases are at the moment in Finnish only: http://bit.ly/fillarikanava_usecase
+
+###Attach screenshots and/or drawings (if you already have some)
+
+###Technological Approach
+
+###Which platform will you use?
+HTML5
+
+###Your experience programming in the chosen platform is:
+Intermediate
+
+###User experience
+Describe briefly how the UX will be: what will the users see, how they will interact with the app, what is the sequence of actions etc.
+- Base: full screen map (see http://dev.hsl.fi/navigator-proto/ )
+- possibility to choose navigation and  issue reporting modes
+
+###Which open data are you using in your app?
+public transport data (for navigation), Open Srtreetmap, HRI data like the locations of traffic lights, reported issues and photos will be published in open data format
+
+###Additional details related to the technological approach
+See the description in Finnish at http://fillarikanava.fi/
+
+##Workplan for the app development
+###Objectives
+Workin solution with City Navigator and Open 311 integration with minimum hassle (keep it simple approach)
+
+###Tasks to deploy
+See https://github.com/fillarikanava/navigator-proto/issues (we will define more in detail during the HSL developer workshor 4-5.10)
+
+###Calendar of app development
+See https://github.com/fillarikanava/navigator-proto/issues/milestones (we will define more in detail during the HSL developer workshor 4-5.10)
+
+###Team description
+non-professional team
+
+###Team location
+So far Helsinki + Tampere (Finland) - looking for members
