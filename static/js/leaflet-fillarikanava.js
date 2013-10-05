@@ -16,7 +16,7 @@ module.exports = window.L.LayerGroup.extend({
             size = fp['marker-size'] || 'medium',
             symbol = (fp['marker-symbol']) ? '-' + fp['marker-symbol'] : '',
             color = (fp['marker-color'] || '7e7e7e').replace('#', '');
-
+/*
         return L.icon({
             iconUrl: 'http://a.tiles.mapbox.com/v3/marker/' +
                 'pin-' + size.charAt(0) + symbol + '+' + color +
@@ -25,6 +25,13 @@ module.exports = window.L.LayerGroup.extend({
             iconSize: sizes[size],
             iconAnchor: [sizes[size][0] / 2, sizes[size][1] / 2],
             popupAnchor: [0, -sizes[size][1] / 2]
+        });
+*/
+        return L.icon({
+            iconUrl: 'https://raw.github.com/fillarikanava/old-fillarikanava/master/media/images/merkki_sin.png',
+            iconSize: [23, 41],
+            iconAnchor: [23/2, 41],
+            popupAnchor: [0, -41]
         });
     },
     onAdd: function(map) {
