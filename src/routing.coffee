@@ -1039,5 +1039,6 @@ map.on 'contextmenu', (e) ->
         return false
 
 
-# Set the Fillarikanava markers layer to be visible as default 
+# Set the Fillarikanava markers layer to be visible as default
+# For some reason this has to be n the end so that the layer doesn't hide zoom controls etc.. ~jogi
 fillarikanava.addTo(map);
