@@ -845,6 +845,7 @@ layers["cloudmade"].addTo(map)
 # Use the leafletOsmNotes() function in file file "static/js/leaflet-osm-notes.js"
 # to create layer for showing error notes from OSM in the map.
 osmnotes = new leafletOsmNotes()
+fillarikanava = new leafletFillarikanava()
 
 # Add the base maps and "error notes" layer to the layers control and add it to the map.
 # See http://leafletjs.com/examples/layers-control.html for more info.
@@ -854,6 +855,7 @@ for key, value of citynavi.config.maps
 
 L.control.layers(control_layers,
     "View map errors": osmnotes
+    "Fillarikanava": fillarikanava
 ).addTo(map)
 
 # Add scale control to the map that shows current scale in
