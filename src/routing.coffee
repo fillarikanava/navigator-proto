@@ -800,6 +800,7 @@ resize_map = () ->
 $(window).on 'resize', () ->
     resize_map()
 
+
 # Create a new Leaflet map and set it's center point to the
 # location defined in the config.coffee
 window.map_dbg = map = L.map('map', {minZoom: citynavi.config.min_zoom, zoomControl: false, attributionControl: false})
@@ -823,6 +824,8 @@ new DetailsControl({position: 'topright'}).addTo(map)
 
 L.control.attribution({position: 'bottomright'}).addTo(map)
 
+
+
 # Starts continuos watching of the user location using Leaflet.js locate function:
 # http://leafletjs.com/reference.html#map-locate
 # Don't use geolocation with Testem as it can't cancel the confirmation dialog
@@ -840,12 +843,16 @@ create_tile_layer = (map_config) ->
 for key, value of citynavi.config.maps
     layers[key] = create_tile_layer(value)
 
-layers["cloudmade"].addTo(map)
+layers["osm"].addTo(map)
 
 # Use the leafletOsmNotes() function in file file "static/js/leaflet-osm-notes.js"
 # to create layer for showing error notes from OSM in the map.
-osmnotes = new leafletOsmNotes()
+# osmnotes = new leafletOsmNotes()
+
+# Use the leafletFillarikanava() function in file file "static/js/leaflet-fillarikanava.js"
+# to create layer for showing Fillarikanava messages on the map.
 fillarikanava = new leafletFillarikanava()
+
 
 # Add the base maps and "error notes" layer to the layers control and add it to the map.
 # See http://leafletjs.com/examples/layers-control.html for more info.
@@ -854,13 +861,14 @@ for key, value of citynavi.config.maps
     control_layers[value.name] = layers[key]
 
 L.control.layers(control_layers,
-    "View map errors": osmnotes
+#    "View map errors": osmnotes
     "Fillarikanava": fillarikanava
 ).addTo(map)
 
+
 # Add scale control to the map that shows current scale in
 # metric (m/km) and imperial (mi/ft) systems
-L.control.scale().addTo(map)
+# L.control.scale().addTo(map)
 
 # Add button that allows user to navigate back in the page history
 BackControl = L.Control.extend
@@ -1029,3 +1037,7 @@ map.on 'contextmenu', (e) ->
         resize_map()
         map.removeLayer(contextmenu)
         return false
+
+
+# Set the Fillarikanava markers layer to be visible as default 
+fillarikanava.addTo(map);
