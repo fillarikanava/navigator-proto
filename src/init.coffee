@@ -26,10 +26,10 @@ $(document).bind "mobileinit", ->
 # Show page loading message for user when making AJAX call and hide the message after (all)
 # AJAX requests have completed
 $(document).ajaxStart (e) ->
-    $.mobile.loading('show')
+    $.mobile?.loading('show')
 
 $(document).ajaxStop (e) ->
-    $.mobile.loading('hide')
+    $.mobile?.loading('hide')
 
 class CityNavigator
     constructor: (opts) ->
